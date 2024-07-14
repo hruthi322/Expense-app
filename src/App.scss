@@ -1,0 +1,11 @@
+@import './scss/_variables.scss';
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+body {
+    font-family: cursive;
+    background-color: $bodyBackground;
+}
+input,button {
+    font-family: cursive;
+}

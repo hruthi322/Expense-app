@@ -1,0 +1,43 @@
+@import "../../scss/variables";
+
+#error-page {
+
+    display: flex;
+    flex-direction: column;
+    gap:1.875rem;
+    align-items: center;
+    margin-top: 12.5rem;
+
+    h1{
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    .error-title {
+        font-size: 1.25rem;
+    }
+    .error-msg {
+        font-style: italic;
+        color: $grey;
+    }
+    a {
+        background: $Maize;
+        border-color: $MetallicSunburst $MetallicSunburst2 $SpanishBistre;
+        color: $ChineseBlack;
+        text-decoration: none;
+        display: inline-block;
+        padding: 0.625rem;
+    }
+    .home-btn {
+        background-color: $Maize;
+        padding: 0.125rem 1.75rem;
+        color: $white;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        line-height: 40px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 10px $boxShadowClr;
+    }
+}

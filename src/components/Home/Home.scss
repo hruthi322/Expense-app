@@ -1,0 +1,179 @@
+@import '../../scss/variables';
+.main{
+    max-width: 920px;
+    background-color: $white;
+    width: 100%;
+    border-radius: 2.5rem;
+    padding: 20px;
+    display: flex;
+    margin: 4rem auto 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    & > *{
+        flex-grow: 1;
+    }
+    &__profile {
+        background-color: $profileBackground;
+        display: flex;
+        flex-direction: column;
+        border-radius: 2.5rem;
+        padding: 1.25rem;
+        &-con {
+            background-color: $white;
+            border-radius: 1.2rem;
+            padding: 1.25rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &-sign-out {
+            margin: 0.5rem auto;
+            padding: 0.25rem 2.5rem;
+            background-color: $white;
+            font-size: 1rem;
+            color: $Maize;
+            font-weight: 500;
+            text-decoration: none;
+            line-height: 40px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px $boxShadowClr;
+        }
+        &-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        &-inp-field {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            input {
+                border: none;
+                border-bottom: 2px solid $inputBorderClr;
+                width: 100%;
+                box-sizing: border-box;
+                background-color: $profileBackground;
+                outline: none;
+                font-size: 1.25rem;
+                padding: 0.25rem;
+            }
+        }
+        &-rad-field {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            input {
+                width: 15px;
+                height: 15px;
+                &:checked{
+                    accent-color: $Maize;
+                }
+            }
+        }
+        &-submit{
+            display: flex;
+            justify-content: center; 
+            &-btn {
+                background-color: $Maize;
+                padding: 0.125rem 1.75rem;
+                color: $white;
+                font-weight: 500;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                line-height: 40px;
+                border-radius: 8px;
+                box-shadow: 2px 2px 10px $boxShadowClr;
+            }
+        }
+        
+    }
+    &-display {
+        padding-right: 1rem;
+        &__total-expense {
+            margin: auto;
+            margin-left: 0;
+            margin-bottom: 0rem;
+            background-color: $Maize;
+            min-width: 90%;
+            border-radius: 2.5rem;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 1rem;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            color: $profileBackground;
+            p {
+                margin: 0.25rem 0;
+                opacity: 0.8;
+            }
+            h2 {
+                margin: 0.5rem 0 0;
+
+            }
+        }  
+        &__breakdown-chevron-con {
+            p {
+                color: $gray;
+                font-size: 1.25rem;
+                font-weight: 100;
+            }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span {
+                // align-self: center;
+                margin-top: 0.5rem;
+            }
+        }
+        &__expense {
+            max-height: calc(85vh - calc(100vh / 2));
+            overflow: auto;
+            &-list {
+                list-style-type: none;
+                padding: 0;
+            }
+            &-item{
+                display: flex;
+                justify-content: space-between;
+                gap: 0.5rem;
+                align-items: center;
+                &-details {
+                    h3 {
+                        font-size: 1.125rem;
+                        margin: 0.25rem 0;
+                    }
+                    p {
+                        font-size: 0.75rem;
+                        margin: 0.25rem 0;
+                    }
+                }
+                &-icon-box {
+                    width: 40px;
+                    height: 40px;
+                    background-color: #d1b9e7;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;   
+                }
+                &-delete {
+                    width: 40px;
+                    height: 40px;
+                    background-color: #d1b9e7;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;   
+                    // opacity: 0.7;
+                    cursor: pointer;
+                    border: none;
+                    outline: none;
+                }
+            }
+            
+        }
+    }
+}

@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { auth } from './firebase.js';
+import './App.scss';
+import { useDispatch } from 'react-redux';
+import { setUser } from './redux/slices/userSlice.js';
+import { useEffect } from 'react';
+import Login from './components/Login/Login';
+import Home from './components/Home/Home';
+import PageNotFound from './components/PageNotFound/PageNotFound';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 function App() {
+const dispatch = useDispatch();
+
+useEffect(()=>{
+  auth.onAuthStateChanged((authUser)=>{
+    if(authUser) {
+      dispatch(setUser(authUser.email));
+    }
+    else {
+      dispatch(setUser(null));
+    }
+  })
+},[]);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home/>,
+    errorElement:<PageNotFound/>,
+  },
+  {
+    path: "/login",
+    element: <Login/>,
+    errorElement:<PageNotFound/>,
+  },
+ 
+])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <RouterProvider router={router} />
   );
 }
 
